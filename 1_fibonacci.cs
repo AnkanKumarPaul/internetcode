@@ -1,27 +1,33 @@
 using System;
-
-namespace FibonacciSeries
+public class FibonacciSeries
 {
-    class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int n, first = 0, second = 1, next;
+        Console.Write("Enter the number of terms: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Fibonacci Series: ");
+        for (int i = 0; i < n; i++)
         {
-            int n1 = 0, n2 = 1, n3, i, number;
-
-            Console.Write("Enter the number of elements: ");
-            number = int.Parse(Console.ReadLine());
-
-            Console.Write(n1 + " " + n2 + " "); // print the first two Fibonacci numbers
-
-            for (i = 2; i < number; ++i) // start from the third Fibonacci number
+            if (i == 0)
             {
-                n3 = n1 + n2;
-                Console.Write(n3 + " ");
-                n1 = n2;
-                n2 = n3;
+                next = first;
             }
-            Console.Write("\n");
+            else if (i == 1)
+            {
+                next = second;
+            }
+            else
+            {
+                next = first + second;
+                first = second;
+                second = next;
+            }
+
+            Console.Write(next + " ");
         }
+
+        Console.ReadLine();
     }
 }
 
@@ -41,13 +47,5 @@ namespace FibonacciSeries
 
 
 
-
-
-
-
-
-
-
-
-Enter the number of elements: 10
-0 1 1 2 3 5 8 13 21 34 
+Enter the number of terms: 10
+Fibonacci Series: 0 1 1 2 3 5 8 13 21 34 
