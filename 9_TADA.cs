@@ -4,8 +4,8 @@ public class Salary
 {
     public double Basic { get; set; }
     public double TA { get; set; }
-    public double DA { get; set; } = 0.10; // Default DA: 10%
-    public double HRA { get; set; } = 0.05; // Default HRA: 5%
+    public double DA { get; set; } = 0.10; 
+    public double HRA { get; set; } = 0.05; 
 
     public Salary(double basic, double ta)
     {
