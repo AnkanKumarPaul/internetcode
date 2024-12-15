@@ -1,27 +1,32 @@
 using System;
-
-namespace Pattern
+public class NumberPyramid
 {
-    class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int n = 5;
+        for (int i = 1; i <= n; i++)
         {
-            int rows = 5; // Number of rows in the pattern
-
-            for (int i = 1; i <= rows; i++)
+            if (i == 1)
             {
+                Console.WriteLine("1");
+            }
+            else
+            {
+                for (int j = 1; j <= n - i; j++)
+                {
+                    Console.Write(" ");
+                }
                 for (int j = 1; j <= i; j++)
                 {
                     Console.Write(j);
                 }
-
-                for (int k = i - 1; k >= 1; k--)
+                for (int j = i - 1; j >= 1; j--)
                 {
-                    Console.Write(k);
+                    Console.Write(j);
                 }
-
                 Console.WriteLine();
             }
         }
+        Console.ReadLine();  
     }
 }
