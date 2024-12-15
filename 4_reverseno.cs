@@ -1,27 +1,27 @@
 using System;
-
-namespace ReverseAndSumDigits
+public class ReverseAndSumDigits
 {
-    class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
+        int number, sum = 0, reversedNumber = 0;
+        Console.Write("Enter a number: ");
+        number = Convert.ToInt32(Console.ReadLine());
+        if (number < 0)
         {
-            Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
-
-            int reversedNum = 0, sum = 0, remainder;
-
-            while (num > 0)
-            {
-                remainder = num % 10;
-                reversedNum = reversedNum * 10 + remainder;
-                sum += remainder;
-                num /= 10;
-            }
-
-            Console.WriteLine("Reversed number: " + reversedNum);
-            Console.WriteLine("Sum of digits: " + sum);
+            Console.WriteLine("The number is negative. Converting to positive.");
+            number = Math.Abs(number); 
         }
+        int originalNumber = number;
+        while (number != 0)
+        {
+            int digit = number % 10;  
+            sum += digit;            
+            reversedNumber = reversedNumber * 10 + digit;  
+            number /= 10;             
+        }
+        Console.WriteLine("Original Number: " + originalNumber);
+        Console.WriteLine("Reversed Number: " + reversedNumber);
+        Console.WriteLine("Sum of Digits: " + sum);
     }
 }
 
@@ -41,18 +41,7 @@ namespace ReverseAndSumDigits
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Enter a number: 1234
-Reversed number: 4321
-Sum of digits: 10
+Enter a number: 12
+Original Number: 12
+Reversed Number: 21
+Sum of Digits: 3
